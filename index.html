@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gridious - A simple Responsive grid system</title>
+    <title>Skillbars - A Super Lightweight, Responsive skillbar plugin</title>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800,400italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/prism.css" />
@@ -16,242 +16,145 @@
 </head>
 <body>
 <div id="display">
-    <h1>Gridious</h1>
-    <h2>A simple Responsive grid system</h2>
-    <a href="https://github.com/RyanFitzgerald/Gridious/archive/master.zip">Download</a>
-    <a href="https://github.com/RyanFitzgerald/Gridious">View on GitHub</a>
+    <h1>Skillbars</h1>
+    <h2>A Super Lightweight, Responsive skillbar plugin</h2>
+    <a href="https://github.com/RyanFitzgerald/skillbars/archive/master.zip">Download</a>
+    <a href="https://github.com/RyanFitzgerald/skillbars">View on GitHub</a>
 </div><!-- End display -->
 <div id="content">
-    <h2>Gridious</h2>
+    <h2>Skillbars</h2>
     <p>
-        Gridious is a simplistic CSS grid framework that is fully responsive and customizable. You can easily add to or edit the existing code to fit your individual project needs. It was created as a simple, bloat-free alternative to Bootstrap, Foundation, and the various other frameworks out there and was modelled off of the grid features I found to be most effective while working with them. In addition, I wanted to create a grid system that I could easily adapt to each project I work on.
-    </p>
+		Skillbars is a lightweight, responsive solution to adding skill-based progress bars to your website. Skillbars can be easily generated using jQuery and used on portfolios, company pages, and more.    
+	</p>
     <h2>Installation & Setup</h2>
     <p>
-        All the installation that is required is simply including the compiled CSS file in your document and Gridious will now be available on every page it is included on.
+        All the installation that is required is simply including the compiled CSS and JS files in your document and Skillbars will now be available on every page it is included on.
     </p>
     <h2>Configuration</h2>
     <p>
-        There are a number of configuration options you can adjust if you like (or just leave the defaults). They can be found in <b>_config.scss</b>
+        There are a number of parameters you may override, or simply use the default provided ones:
     </p>
     <table>
         <thead>
             <tr>
-                <th>Property</th>
-                <th>Variable Name</th>
+                <th>Parameter</th>
                 <th>Description</th>
                 <th>Default</th>
             </tr>
         </thead>
         <tbody>
         <tr>
-            <td>Small Breakpoint</td>
-            <td>$sm-break</td>
-            <td>The upper limit of the small screen size</td>
-            <td>480px</td>
+            <td>color</td>
+            <td>The color of the progress bars (this can also be overwritten with custom css if left at default</td>
+            <td>#000</td>
         </tr>
         <tr>
-            <td>Medium Breakpoint</td>
-            <td>$md-break</td>
-            <td>The upper limit of the medium screen size</td>
-            <td>959px</td>
+            <td>style</td>
+            <td>Choose a style that comes with the plugin or make your own (see below)</td>
+            <td>1</td>
         </tr>
         <tr>
-            <td>Max Width</td>
-            <td>$max-width</td>
-            <td>The max width the grid will expand for</td>
-            <td>1200px</td>
+            <td>showLevel</td>
+            <td>Choose whether or not to show the numerical value of the skillbar</td>
+            <td>false</td>
         </tr>
         <tr>
-            <td>Column Number</td>
-            <td>$column-number</td>
-            <td>The number of columns per row</td>
-            <td>12</td>
+            <td>animate</td>
+            <td>Choose whether or not to animate the skillbars when loaded</td>
+            <td>true</td>
         </tr>
         <tr>
-            <td>Gutter</td>
-            <td>$column-padding</td>
-            <td>The space on either side of each column</td>
-            <td>15px</td>
+            <td>speed</td>
+            <td>The speed at which the bars are animated (in milliseconds)</td>
+            <td>300</td>
         </tr>
         </tbody>
     </table>
-    <h2>The Grid</h2>
+    <h2>Example Usage</h2>
     <p>
-        The grid is easy to use and has 3 main screen sizes (unless otherwise edited). They are:
+        An example usage showing each parameter is as follows:
     </p>
-<pre><code class="language-scss">@media only screen and (max-width: 480px) {
-    // Small Screen
-    // Syntax: sm-col-X where X is an integer between 1 and $column-number
-}
-
-@media only screen and (max-width: 481px) and (max-width: 959px) {
-    // Medium Screen
-    // Syntax: md-col-X where X is an integer between 1 and $column-number
-}
-
-@media only screen and (min-width: 960px) {
-    // Large Screen
-    // Syntax: lg-col-X where X is an integer between 1 and $column-number
-}</code></pre>
+	<pre><code class="language-javascript">
+	$('#myID').skillbars({
+		color: '#000',
+		style: 1,
+		showLevel: true,
+		animate: true,
+		speed: 300
+	});
+	</code></pre>
+    <h2>Customization</h2>
+	<h3>Option 1 - Changing Defaults</h3>
+	<p>
+		There are 2 basic defaults that can be changed in order to alter the styles: color and style (see above).
+	</p>
+	<p>
+		If you wish to have customization beyond the bar color and general styles provided with the plugin, see option 2.
+	</p>
+	<h3>Option 2 - Creating Custom Styles</h3>
     <p>
-        Gridious is mobile-first and you may have different columns for each screen size. If the total number of columns in a row exceeds the max number of columns set (Default: 12), it will wrap below.
-    </p>
-<pre><code class="language-markup">
-    <script>
-    <div class="row">
-        <div class="sm-col-12 md-col-10 lg-col-6">
-            12 columns wide on small (wrap)
-            10 columns wide on medium
-            6 columns wide on large
-        </div>
-        <div class="sm-col-12 md-col-2 lg-col-6">
-            12 columns wide on small (wrap)
-            2 columns wide on medium
-            6 columns wide on large
-        </div>
-    </div>
-    </script>
-</code></pre>
-    <h2>Utility Classes</h2>
-    <p>
-        There are a couple of utility classes that can be used in conjunction with the grid by adding the classes to elements.
+        You can easily create custom styles by overriding the generated elements. The elements and their corresponding functions are:
     </p>
     <table>
         <thead>
             <tr>
-                <th>Name</th>
+                <th>Element</th>
                 <th>Description</th>
-                <th>Usage</th>
             </tr>
         </thead>
     <tbody>
         <tr>
-            <td>Full Width</td>
-            <td>Allows the row to span the entire width, ignoring the max width set in config</td>
-            <td>.gd-full</td>
+			<td>.skillbars</td>
+			<td>Overall ul that contains all the skillbars</td>
         </tr>
-        <tr>
-            <td>Clearfix</td>
-            <td>Clearfix hack; fixes floating issues that sometimes occurs</td>
-            <td>.clearfix</td>
+		<tr>
+			<td>.skillbar</td>
+			<td>Individual skillbar wrapper</td>
         </tr>
-        <tr>
-            <td>Hide All Screens</td>
-            <td>Hides an element on any screen size</td>
-            <td>.gd-hide</td>
+		<tr>
+			<td>.skillbar-text</td>
+			<td>The individual skillbar label</td>
         </tr>
-        <tr>
-            <td>Hide on Small Only</td>
-            <td>Hides an element when on small screen</td>
-            <td>.gd-hide-sm</td>
+		<tr>
+			<td>.skillbar-bar</td>
+			<td>The skillbar background</td>
         </tr>
-        <tr>
-            <td>Hide on Medium Only</td>
-            <td>Hides an element when on medium screen</td>
-            <td>.gd-hide-md</td>
+		<tr>
+			<td>.skillbar-level</td>
+			<td>The colored skillbar that shows the level</td>
         </tr>
-        <tr>
-            <td>Hide on Medium &amp; Down</td>
-            <td>Hides an element when on medium screen or below</td>
-            <td>.gd-hide-md-down</td>
-        </tr>
-        <tr>
-            <td>Hide on Medium &amp; Up</td>
-            <td>Hides an element when on medium screen or above</td>
-            <td>.gd-hide-md-up</td>
-        </tr>
-        <tr>
-            <td>Hide on Large Only</td>
-            <td>Hides an element when on large screen</td>
-            <td>.gd-hide-lg</td>
+		<tr>
+			<td>.skillbar-percent</td>
+			<td>The percentage value of the skillbar level (on created if showLevel set to true)</td>
         </tr>
     </tbody>
     </table>
     <p>
-        Add additional utility classes of your own in <b>_utilities.scss</b> if you wish.
+        Alternative, you can also create your own styles and only apply them to certain skillbar groups by using the style parameter. For example
     </p>
-    <h2>Customization</h2>
-    <p>
-        Gridious is simple to use and edit. It is a barebones CSS framework and, as a result, you can easily customize to fit whatever project you happen to be working on. The files included and their usages are as follows:
-    </p>
-    <table>
-        <thead>
-            <tr>
-                <th>File Name</th>
-                <th>Usage</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>_config.scss</td>
-                <td>Holds all configuration variables</td>
-            </tr>
-            <tr>
-                <td>_grid.scss</td>
-                <td>Where the grid functionality is stored</td>
-            </tr>
-            <tr>
-                <td>_mixins.scss</td>
-                <td>Holds mixins used in other files</td>
-            </tr>
-            <tr>
-                <td>_utilities.scss</td>
-                <td>Holds all utility classes</td>
-            </tr>
-            <tr>
-                <td>_variables.scss</td>
-                <td>Holds and defines all variables used in other files</td>
-            </tr>
-        </tbody>
-    </table>
-    <p>
-        If you wish to add another screen size, you can take advantage of the generate-columns mixin:
-    </p>
-    <pre><code class="language-scss">
-        // --- Generate Columns ---
-        // $size is the column name/size (ex: sm, md, lg)
-        @mixin generate-column($size) {
-            @for $sizeName from 1 through $columns {
-                .#{$size}-col-#{$sizeName} {
-                    width: (100%/($columns/$sizeName));
-                }
-            }
-        }
-    </code></pre>
-    <p>
-        In addition to the mixin, you can also create an type of column you wish as long as the collective widths add to 100%. For example,
-    </p>
-    <pre><code class="language-markup">
-        <script>
-        <style>
-        .col-10 {
-           width: 10%;
-        }
-
-        .col-90 {
-           width: 90%;
-        }
-        </style>
-        <div class="row">
-           <div class="col-10"></div>
-           <div class="col-90"></div>
-        </div>
-        </script>
-    </code></pre>
-    <h2>Contributions</h2>
-    <h3>Nicolas Gallagher & Jonathan Neal</h3>
-    <p>
-        <a href="https://github.com/necolas/normalize.css/" target="_blank">Normalize.css</a> : makes browsers render all elements more consistently and in line with modern standards. It precisely targets only the styles that need normalizing.
-    </p>
+	<pre><code class="language-javascript">
+	$('#myID').skillbars({
+		style: 'coolstyle'
+	});
+	</code></pre>
+	<p>
+		Which would add skillbar-style-coolstyle to the wrapper, which can be customized by separate CSS:
+	</p>
+	<pre><code class="language-css">
+	ul.skillbar-style-coolstyle span.skillbar-bar {
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		border-radius: 10px;
+	}
+	</code></pre>
     <h2>License</h2>
     <p>
         MIT License
     </p>
     <div id="buttons">
         <a href="demo.html" class="button">View Demo</a>
-        <a href="https://github.com/RyanFitzgerald/Gridious/archive/master.zip" class="button">Download</a>
-        <a href="https://github.com/RyanFitzgerald/Gridious" class="button">View on GitHub</a>
+        <a href="https://github.com/RyanFitzgerald/Gridious/skillbars/master.zip" class="button">Download</a>
+        <a href="https://github.com/RyanFitzgerald/skillbars" class="button">View on GitHub</a>
     </div>
 </div><!-- End content -->
 <div id="footer">
