@@ -1,76 +1,82 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <title>Demo page</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" />
-    <link rel="stylesheet" href="demo.css">
-    <link rel="stylesheet" href="skillbars.css">
+    <title>Gridious - Demo Page</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/gridious.min.css">
+    <link rel="stylesheet" href="css/demo.css">
 </head>
 <body>
-<h1>SkillBars Demo Page</h1>
-<h2>View the documentation <a href="#">here</a></h2>
-<h3>Style 1</h3>
-<ul id="skillbar-area">
-    <li data-level="78">
-        Javascript
-    </li>
-    <li data-level="71">
-        HTML
-    </li>
-    <li data-level="92">
-        CSS
-    </li>
-</ul>
-<h3>Style 2</h3>
-<ul id="skillbar-area2">
-    <li data-level="78">
-        Javascript
-    </li>
-    <li data-level="71">
-        HTML
-    </li>
-    <li data-level="92">
-        CSS
-    </li>
-</ul>
-<h3>Style 3</h3>
-<ul id="skillbar-area3">
-    <li data-level="78">
-        Javascript
-    </li>
-    <li data-level="71">
-        HTML
-    </li>
-    <li data-level="92">
-        CSS
-    </li>
-</ul>
-<h3>Style 3 - Show level</h3>
-<ul id="skillbar-area4">
-    <li data-level="78">
-        Javascript
-    </li>
-    <li data-level="71">
-        HTML
-    </li>
-    <li data-level="92">
-        CSS
-    </li>
-</ul>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-<script src="skillbars.min.js"></script>
-<script>
-    $('#skillbar-area').skillbars();
-    $('#skillbar-area2').skillbars({
-        style: 2
-    });
-    $('#skillbar-area3').skillbars({
-        style: 3
-    });
-    $('#skillbar-area4').skillbars({
-        style: 3,
-        showLevel: true
-    });
-</script>
+    <h1>Gridious - Example Page</h1>
+    <h2><a href="index.html">&larr; Back to Docs</a></h2>
+    <h2>The Grid</h2>
+    <div class="row r1">
+        <div class="sm-col-12 md-col-8 lg-col-6">
+            <span>sm-col-12 / md-col-8 / lg-col-6</span>
+        </div>
+        <div class="sm-col-12 md-col-4 lg-col-6">
+            <span>sm-col-12 / md-col-4 / lg-col-6</span>
+        </div>
+    </div>
+    <div class="row r2">
+        <div class="sm-col-6 md-col-7 lg-col-4">
+            <span>sm-col-6 / md-col-7 / lg-col-4</span>
+        </div>
+        <div class="sm-col-6 md-col-3 lg-col-4">
+            <span>sm-col-6 / md-col-3 / lg-col-4</span>
+        </div>
+        <div class="sm-col-12 md-col-2 lg-col-4">
+            <span>sm-col-12 / md-col-2 / lg-col-4</span>
+        </div>
+    </div>
+    <div class="row r3">
+        <div class="sm-col-8 md-col-3">
+            <span>sm-col-8 / md-col-3</span>
+        </div>
+        <div class="sm-col-4 md-col-3">
+            <span>sm-col-4 / md-col-3</span>
+        </div>
+        <div class="sm-col-5 md-col-3">
+            <span>sm-col-5 / md-col-3</span>
+        </div>
+        <div class="sm-col-7 md-col-3">
+            <span>sm-col-7 / md-col-3</span>
+        </div>
+    </div>
+    <div class="row r4">
+        <div class="sm-col-12">
+            <span>sm-col-12</span>
+        </div>
+    </div>
+    <h2>Utility Classes</h2>
+    <h3>Full Width Rows</h3>
+    <div class="row gd-full">
+        <div class="sm-col-4">
+            <span>Full Width</span>
+        </div>
+        <div class="sm-col-4">
+            <span>Full Width</span>
+        </div>
+        <div class="sm-col-4">
+            <span>Full Width</span>
+        </div>
+    </div>
+    <h3>Visibility Classes</h3>
+    <div class="row r2">
+        <div class="sm-col-12 gd-hide-sm">
+            <span>Hide Small Only</span>
+        </div>
+        <div class="sm-col-12 gd-hide-md-down">
+            <span>Hide Medium & Down</span>
+        </div>
+        <div class="sm-col-12 gd-hide-md">
+            <span>Hide Medium Only</span>
+        </div>
+        <div class="sm-col-12 gd-hide-md-up">
+            <span>Hide Medium & Up</span>
+        </div>
+        <div class="sm-col-12 gd-hide-lg">
+            <span>Hide Large Only</span>
+        </div>
+    </div>
 </body>
 </html>
