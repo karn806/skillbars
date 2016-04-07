@@ -79,6 +79,10 @@ ul.skillbar-style-coolstyle span.skillbar-bar {
 }
 ```
 
+## Demo
+
+For a demo, click [here](http://ryanfitzgerald.github.io/skillbars/)
+
 ## License
 
 MIT License (see LICENSE.md)
